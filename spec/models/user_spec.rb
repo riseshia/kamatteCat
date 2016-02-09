@@ -9,6 +9,5 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Active Record Associations' do
-    it { should have_many(:tasks) }
   end
 end
