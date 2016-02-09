@@ -29,9 +29,12 @@ gem 'responders'
 gem 'devise'
 gem 'omniauth-github'
 
+gem "octokit", "~> 4.0"
+
 gem 'figaro'
 
 gem 'puma'
+
 group :development do
   gem 'capistrano',         require: false
   gem 'capistrano-rbenv',     require: false

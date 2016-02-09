@@ -111,3 +111,5 @@ bower.json
 
 # Vagrant
 .vagrant/
+
+.byebug_history
