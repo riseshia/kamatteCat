@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :validatable, :omniauthable
 
+  has_many :repositories
+
   validates :provider, presence: true
   validates :uid, presence: true
 
@@ -20,6 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def client
-    Octokit::Client.new(access_token: current_user.access_token)
+    Octokit::Client.new(access_token: access_token)
   end
 end
