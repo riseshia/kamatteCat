@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
       user.access_token = auth.credentials.token
     end
   end
+
+  def client
+    Octokit::Client.new(access_token: current_user.access_token)
+  end
 end
