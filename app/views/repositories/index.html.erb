@@ -17,7 +17,7 @@
       <tr>
         <td><%= repository.name %></td>
         <td><%= repository.full_name %></td>
-        <td><%= repository.is_target %></td>
+        <td><%= repository.is_target_to_s %></td>
         <td><%= link_to 'Go to github', repository.html_url, target: '_blank' %></td>
       </tr>
     <% end %>
