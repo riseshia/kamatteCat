@@ -1,9 +1,15 @@
 <h2>Before 2 weeks ago, you make...</h2>
 
-<% @list.each do |k, v| %>
-  <h3><%= k %> -> <%= v.size %></h3>
-  <% v.each do |hash| %>
-  <p><%= link_to hash.commit.message, hash.html_url, target: '_blank' %></p>
+<% if current_user.repos_to_check.empty? %>
+  <p>You don't sync your repositories. Let's <%= link_to 'sync', sync_repositories_path, method: :post %> at first!</p>
+<% elsif @list.empty? %>
+  <p>Nothing! I can't find.</p>
+<% else %>
+  <% @list.each do |k, v| %>
+    <h3><%= k %> -> <%= v.size %></h3>
+    <% v.each do |hash| %>
+    <p><%= link_to hash.commit.message, hash.html_url, target: '_blank' %></p>
+    <% end %>
   <% end %>
 <% end %>
 <br>

@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Sync Repository', sync_repositories_path, method: :post %> | 
+<%= link_to 'Back', home_index_path %>
+<br>
+
 <h1>Listing Repositories</h1>
+
+<% unless @has_enabled_repositories %>
+<h3>Please turn on reporting of repositories what you want!</h3>
+<% end %>
 
 <table>
   <thead>
@@ -22,8 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Sync Repository', sync_repositories_path, method: :post %> | 
-<%= link_to 'Back', home_index_path %>

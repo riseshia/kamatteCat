@@ -18,6 +18,7 @@ RSpec.describe "repositories/index", type: :view do
         :is_target => 0
       )
     ])
+    assign(:has_enabled_repositories, true)
   end
 
   it "renders a list of repositories" do

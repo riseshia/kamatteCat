@@ -2,7 +2,8 @@ class RepositoriesController < ApplicationController
   respond_to :html
 
   def index
-    @repositories = current_user.repositories
+    @repositories = current_user.repositories.order(is_target: :desc)
+    @has_enabled_repositories = current_user.repos_to_check.present?
     respond_with(@repositories)
   end
 
