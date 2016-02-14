@@ -1,0 +1,11 @@
+Before 2 weeks ago, you make...
+
+============================================================
+
+<% @list.each do |k, v| %>
+Repository: <%= k %> -> <%= v.size %>
+
+<% v.each do |hash| %>
+  <%= link_to hash.commit.message, hash.html_url, target: '_blank' %>
+<% end %>
+<% end %>
