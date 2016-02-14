@@ -24,7 +24,7 @@ class RepositoriesController < ApplicationController
   end
 
   def switch
-    repository = Repository.find(params[:id])
+    repository = Repository.find_by(id: params[:id], user_id: current_user.id)
     repository.is_target = 1 - repository.is_target
     repository.save
 
