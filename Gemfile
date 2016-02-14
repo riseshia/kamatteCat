@@ -29,7 +29,9 @@ gem 'responders'
 gem 'devise'
 gem 'omniauth-github'
 
-gem "octokit", "~> 4.0"
+gem "octokit", '~> 4.0'
+
+gem 'whenever', :require => false
 
 gem 'figaro'
 
