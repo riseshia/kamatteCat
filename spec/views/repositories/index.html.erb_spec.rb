@@ -22,9 +22,8 @@ RSpec.describe "repositories/index", type: :view do
 
   it "renders a list of repositories" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Full Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Go to github".to_s, :count => 2
+    assert_select "tr>td", :text => "OFF".to_s, :count => 2
+    assert_select "tr>td", :text => "Name (Go to github)".to_s, :count => 2
     assert_select "tr>td", :text => "OFF".to_s, :count => 2
   end
 end

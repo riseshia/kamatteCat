@@ -17,6 +17,14 @@ class RepositoriesController < ApplicationController
       end
     end
 
-    redirect_to repositories_path
+    redirect_to repositories_path, notice: 'Successfully synced.'
+  end
+
+  def switch
+    repository = Repository.find(params[:id])
+    repository.is_target = 1 - repository.is_target
+    repository.save
+
+    redirect_to repositories_path, notice: 'Successfully updated.'
   end
 end
