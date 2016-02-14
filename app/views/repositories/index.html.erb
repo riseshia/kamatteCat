@@ -15,7 +15,7 @@
     <% @repositories.each do |repository| %>
       <tr>
         <td><%= repository.is_target_to_s %></td>
-        <td><%= repository.name %> (<%= link_to 'Go to github', repository.html_url, target: '_blank' %>)</td>
+        <td><%= repository.full_name %> (<%= link_to 'Go to github', repository.html_url, target: '_blank' %>)</td>
         <td><%= switcher repository %></td>
         <td></td>
       </tr>
