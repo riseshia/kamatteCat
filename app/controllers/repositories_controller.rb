@@ -7,7 +7,9 @@ class RepositoriesController < ApplicationController
   end
 
   def sync
-    current_user.client.repos.each do |repo_from_github|
+    client = current_user.client
+    client.auto_paginate = true
+    client.repos.each do |repo_from_github|
       Repository.where(full_name: repo_from_github.full_name).first_or_create do |repository|
         repository.name = repo_from_github.name
         repository.full_name = repo_from_github.full_name
