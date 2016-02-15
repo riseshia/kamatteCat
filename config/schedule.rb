@@ -1,3 +1,3 @@
-every 1.days, :at => '6:30 am' do
+every 1.days do
   rake 'report:two_week_ago_commit'
 end
