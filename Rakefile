@@ -7,7 +7,6 @@ Rails.application.load_tasks
 
 namespace :report do
   task two_week_ago_commit: :environment do
-    set :output, "#{Rails.root}/log/cron_log.log"
     puts '--- Start to Working ---'
 
     User.all.each do |user|
